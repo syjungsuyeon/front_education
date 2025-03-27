@@ -1,0 +1,44 @@
+<style>
+    /* odd=홀수=2n+1 */
+    /* 자식이냐 하위냐 > 없이 써도 됨 */
+    tr:nth-child(n+2)>td:nth-of-type(odd) {
+        background-color: orange;
+    }
+
+    td:nth-of-type(2n) {
+        background-color: cyan;
+    }
+</style>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>구분</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+        </tr>
+        <tr>
+            <td>가</td>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>나</td>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>다</td>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+    </table>
+</body>

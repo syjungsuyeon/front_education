@@ -1,0 +1,37 @@
+<style>
+    /* 숨겨라 */
+    input+span {
+        display: none;
+    }
+
+    /* 보여라 */
+    input:checked+span {
+        display: inline-block;
+    }
+
+    /* 선택되어지지 않은 아이는 숨겨라 */
+    input:checked+span+span {
+        display: none;
+    }
+    /* 마우스가 올라갔을 때 이를 제어 */
+    label:hover{background-color: yellow;}
+    /* 누르고 있는 상태 */
+    label:active{background-color: aqua;}
+    /* 초점이 맞춰졌을 때 반응 */
+    input:focus{ background-color: aquamarine;}
+    input:hover{background-color: antiquewhite;}
+</style>
+
+<body>
+    <input type="text">
+    <a href="https://naver.com">네이버</a>
+    <label>
+        <input type="checkbox">
+        <span style="color:green;">선택O</span>
+        <span style="color: red;">선택X</span>
+    </label>
+    <hr>
+    <input type="checkbox">
+    <span style="color:green;">선택O</span>
+    <span style="color: red;">선택X</span>
+</body>
