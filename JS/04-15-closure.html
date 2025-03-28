@@ -1,0 +1,15 @@
+<body>
+    <script>
+        //호출 할 때마다 숫자를 증가시키는 함수
+        function sequence() {
+            let seq = 0;
+            return function () {
+                return ++seq;
+            };
+        }
+        const seq = sequence();
+        console.log(seq());
+        console.log(seq());
+        console.log(seq());
+    </script>
+</body>

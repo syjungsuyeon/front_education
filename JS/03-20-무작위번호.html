@@ -1,6 +1,7 @@
 <body>
     <script>
-        // 중복되지 않는 3개의 번호 추출
+        //무작위 번호 맞히기
+        //1.중복되지 않는 3개의 번호 추출
         //const selected = [];
 
         while (true) {
@@ -14,10 +15,10 @@
             }
             console.log(selected);
 
-            //추출된 번호 정렬하기
+            //2.추출된 번호 정렬하기
             selected.sort((a, b) => a - b);
 
-            //제시된 번호와 비교하기
+            //3.제시된 번호와 비교하기
             const lotto = [1, 8, 16];
             if (lotto == selected.toString()) {
                 console.log('맞히기 성공');

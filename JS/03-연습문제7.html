@@ -1,0 +1,33 @@
+<body>
+    <script>
+        //"무작위 번호 맞히기"의 코드를 활용하여 제시된 번호를 맞힐 때까지 시도한 횟수를 결과와 같이 출력하기 (중첩 반복문 사용)
+        const lotto = [1, 8, 16];  // 정답 로또 번호
+        let cnt = 0;   //시도 횟수
+        
+        while (true) {
+            cnt++; // 시도 횟수 증가
+
+            // 랜덤 번호 3개 생성 (1~45)
+            let randomNumbers = [];
+            while (randomNumbers.length < 3) {
+                let num = Math.floor(Math.random() * 45) + 1;
+                if (!randomNumbers.includes(num)) { //중복 방지
+                    randomNumbers.push(num);
+                }
+            }
+
+            // 생성된 번호 정렬 (순서 무관 비교를 위해)
+            randomNumbers.sort((a, b) => a - b);
+            lotto.sort((a, b) => a - b);
+
+            console.log(`시도 ${cnt}: ${randomNumbers}`);
+
+            // 정답과 비교
+            if (JSON.stringify(randomNumbers) === JSON.stringify(lotto)) {
+                break; // 정답이면 루프 종료
+            }
+        }
+
+        console.log(`1등 맞추기 시도 횟수: ${cnt}`);
+    </script>
+</body>

@@ -6,7 +6,19 @@
         const com = parseInt(Math.random() * 3);
         console.log(`player: ${map[player]}, com: ${map[com]}`);
         let result = '';
-        /* 코드 */
+        
+        if (player === com) {
+            result = '비김';
+        } else if (
+            (player === 0 && com === 2) || // 가위가 보를 이김
+            (player === 1 && com === 0) || // 바위가 가위를 이김
+            (player === 2 && com === 1)    // 보가 바위를 이김
+        ) {
+            result = 'player 승';
+        } else {
+            result = 'com 승';
+        }
+
         console.log(`결과: ${result}`);
     </script>
 </body>

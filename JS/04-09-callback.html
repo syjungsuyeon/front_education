@@ -1,0 +1,21 @@
+<body>
+    <script>
+        // First-class Function - 함수를 인자로 사용하여 Callback 처리
+        function quiz(answer, printYes, printNo) {
+            if (answer === 'love you') {
+                printYes();
+            } else {
+                printNo();
+            }
+        }
+        const printYes = function () {
+            console.log('yes!');
+        }
+        const printNo = function () {
+            console.log('no!');
+        }
+        quiz('wrong', printYes, printNo);
+        quiz('love you', printYes, printNo);
+
+    </script>
+</body>

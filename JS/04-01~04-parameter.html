@@ -1,0 +1,37 @@
+<body>
+    <script>
+
+        //하나의 함수는 하나의 작업을 수행하도록 설계
+        function printHello() {
+            console.log('Hello');
+        }
+        printHello();
+        function log(message) {
+            console.log(message);
+        }
+        log('Hello@');
+
+
+        //기본자료형: 값 전달
+        function changeName(name) {
+            name = 'tom';
+        }
+        const name = 'john';
+        changeName(name);
+        console.log(name);
+
+        //참조 자료형 (객체) : 참조(주소) 전달
+        function changeNameByObject(obj) {
+            obj.name = 'tom';
+        }
+        const user = { name: 'john' };
+        changeNameByObject(user);
+        console.log(user);
+
+        //기본값 지정
+        function showMessage(message, from = 'unknown') {
+            console.log(`${message} by ${from}`);
+        }
+        showMessage('Hi!');
+    </script>
+</body>
