@@ -1,0 +1,29 @@
+<body>
+    <script>
+        // 중복되지 않는 3개의 번호 추출
+        //const selected = [];
+
+        while (true) {
+            const selected = [];
+
+            while (selected.length < 3) {
+                const num = parseInt(Math.random() * 45) + 1;
+                if (selected.indexOf(num) == -1) {
+                    selected.push(num);
+                }
+            }
+            console.log(selected);
+
+            //추출된 번호 정렬하기
+            selected.sort((a, b) => a - b);
+
+            //제시된 번호와 비교하기
+            const lotto = [1, 8, 16];
+            if (lotto == selected.toString()) {
+                console.log('맞히기 성공');
+                break;
+            }
+        }
+
+    </script>
+</body>

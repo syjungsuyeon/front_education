@@ -1,0 +1,18 @@
+<body>
+    <script>
+        let i;
+        for (i = 3; i > 0; i--) { // for(begin; condition; step)
+            console.log(`for: ${i}`);
+        }
+        for (let i = 3; i > 0; i = i - 2) {
+            console.log(`inline variable for: ${i}`);
+        }
+
+        //문자 인덱스 번호
+        let 문자 = 'Hello JavaScript'; //16글자
+        //문자[0]
+        for(let i=0;i<문자.length;i++){
+            console.log(문자[i],i);            
+        }
+    </script>
+</body>
