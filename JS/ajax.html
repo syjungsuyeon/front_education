@@ -1,0 +1,23 @@
+<body>
+    <script>
+        let url = 'https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=서울';
+
+        //비동기/논블럭킹 방식으로 동작
+        //병렬실행
+        async function run() {
+            const res = await fetch(url);
+            const data = await res.json();  // 객체로 변환
+            console.log(data);
+            //data는 객체. 객체는 key와 value를 가지고 있다
+            const results=data.results;
+            //results는 리스트.
+            results.forEach((v)=>{
+                //v는 객체
+                let title = v.original_title;
+                console.log(title);
+            });
+            // console.log(results);
+        }
+        run();
+    </script>
+</body>

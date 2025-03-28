@@ -1,0 +1,22 @@
+<body>
+    <script>
+        //Array - 반복문을 이용한 요소 제어
+        //forEach: 모든 요소(key/value)를 순서대로 하나씩 꺼내어 확인
+        const animals = ['🐶', '🐱', '🐷'];
+
+        // animals.forEach(function (animal, index, array) {
+        //     console.log(`${animal} | ${index} | ${array}`);
+        // });
+        // animals.forEach((animal, index, array) => {
+        //     console.log(`${animal} | ${index} | ${array}`);
+        // });
+
+        animals.forEach(run);
+        //animals.map(run);
+
+        //매개변수(i) 나타나게 하고 싶을 경우 value 무조건 넣기
+        function run(value, index, array){
+            console.log(value, index, array);
+        }
+    </script>
+</body>

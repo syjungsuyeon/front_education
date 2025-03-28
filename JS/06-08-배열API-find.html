@@ -1,0 +1,13 @@
+<!-- find(predicate: (value: T, index: number, obj: T[]) -->
+<body>
+    <script>
+        //Array API 찾기 - find: 해당 요소 1개
+        //조건에 맞는 경우 첫번째 요소 반환
+        const array = [10, 23, 29, 33, 37, 40];
+        let result = array.find((value, index, arr) => {
+            console.log(value, index, arr);
+            return value % 3 == 0;
+        });
+        console.log(result);
+    </script>
+</body>

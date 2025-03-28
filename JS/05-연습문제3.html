@@ -1,0 +1,27 @@
+<body>
+    <script>
+        //반복문을 사용하여 article 객체가 가지고 있는 모든 속성들의 값 출력하기
+        //for in / typeof 활용
+        const article = {
+            num: 1,
+            title: 'A',
+            reply: [
+                { num: 3, title: 'A-3' },
+                { num: 2, title: 'A-2' },
+                { num: 1, title: 'A-1' }
+            ]
+        };
+
+        //parse, parsing 파싱(자르다)
+        for (const key in article) {
+            let type = typeof article[key];
+            if (type == "object") {
+                for(const key2 in article[key]){
+                    console.log(article[key][key2]);
+                }
+            } else {
+                console.log(article[key]);
+            }
+        }
+    </script>
+</body>

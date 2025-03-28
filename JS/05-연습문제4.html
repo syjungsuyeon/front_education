@@ -1,0 +1,23 @@
+<body>
+    <script>
+        //속성 중 bathroom을 제거하고 animals 배열 ['개', '고양이'] 속성 추가하기
+
+        const house = {
+            bathroom: 1,
+            room: 2,
+            address: ['제주도', '제주시', '연동'],
+            persons: [
+                { name: 'kim' },
+                { name: 'lee' }
+            ]
+        };  
+        console.log(house);
+        delete house['bathroom'];  //속성 중 bathroom을 제거
+        console.log(house);
+        
+        const animals=['😺', '🐶'];
+        house.animals=animals;
+        house['animals']=animals; //animals 배열 ['개', '고양이'] 속성 추가
+        console.log(house);
+    </script>
+</body>

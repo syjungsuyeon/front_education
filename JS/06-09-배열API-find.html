@@ -1,0 +1,14 @@
+<!-- filter(predicate: (value: T, index: number, array: T[]) -->
+
+<body>
+    <script>
+        //Array API 찾기 - filter : 해당하는 요소를 찾은 후 배열 생성
+        //조건에 맞는 모든 요소로 새로운 배열을 생성
+        const array = [10, 23, 29, 33, 37, 40];
+        let result = array.filter((value, index, arr) => {
+            console.log(value, index, arr);
+            return value % 2 == 0;
+        });
+        console.log(result);
+    </script>
+</body>
