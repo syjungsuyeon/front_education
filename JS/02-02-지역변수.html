@@ -1,0 +1,24 @@
+<body>
+    <script>
+        // 중괄호 사용 시 범위가 한정적(지역변수)
+        let globalScope = 'global name';
+        {
+            let name = 'javascript';
+            console.log(name);
+            name = 'hello';
+            console.log(name);
+        }
+        console.log(name);
+        console.log(globalScope);
+
+        //let globalScope = 'global name';
+        {
+            var name = 'javascript';
+            console.log(name);
+            name = 'hello';
+            console.log(name);
+        }
+        console.log(name);
+        console.log(globalScope); 
+    </script>
+</body>
