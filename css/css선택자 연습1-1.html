@@ -1,11 +1,18 @@
 <!-- 가능하다면 똑같은 선택자 사용x -->
 <style>
-    .first:first-child{color: red;}
+    /* .first:first-child{color: red;}
     ol>.second{color: green;}
     .second+.first{color: blue;}
     ul>li:first-child{color: yellow;}
     ul>:nth-child(2) {color: purple;}
-    ul>:last-child{color: cyan;}
+    ul>:last-child{color: cyan;} */
+
+    ol > li:first-child { color: red; }
+    .first + .second { color: green; }
+    .first:last-of-type { color: blue; }
+    ul > .third:first-of-type { color: yellow; }
+    ul > .second { color: purple; }
+    .third ~ .third { color: cyan; }
 </style>
 
 <body>

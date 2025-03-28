@@ -1,5 +1,5 @@
 <style>
-    tr:nth-child(1){
+    /* tr:nth-child(1){
         background-color: lightgray;
     }
     tr:nth-child(2)>td:not(:nth-child(1)){
@@ -13,7 +13,24 @@
     }
     tr:last-child td:nth-child(n+2):not(:last-child){
         background-color: orange;
+    } */
+
+    tr:first-child { background-color: lightgray; }
+
+    tr:nth-child(2) > td:nth-child(n+2) { 
+    background-color: yellow;
     }
+
+    tr:nth-child(3) > td:nth-child(-n+3) { 
+    background-color: green; 
+    }
+    tr:nth-child(4) > td:not(:nth-child(3)) { 
+    background-color: cyan;
+    }
+    tr:last-child td:nth-child(n+2):not(:last-child) {
+    background-color: orange;
+    }
+
     /* table n:0 1 2 3 */
 </style>
 <body>
