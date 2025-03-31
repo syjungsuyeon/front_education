@@ -1,0 +1,34 @@
+<!-- 버튼 클릭 시 이미지 불러오기
+1. img 객체 제거 (removeChild)
+- querySelector 사용 시 객체가 존재하지 않으면 null 반환
+2. img 객체 생성 (createElement)
+3. img 객체의 src 속성과 속성값 지정 (setAttribute) -->
+
+<body>
+    <div class="container">
+        <div class="d-grid">
+            <button type="button" class="btn btn-primary btn-block">
+                이미지 불러오기
+            </button>
+        </div>
+        <div class="target"></div>
+    </div>
+    <script>
+        document.querySelector('button').addEventListener('click', () => {
+            const targetImg = document.querySelector('.target>img');
+            if(targetImg){
+                targetImg.remove();
+            }
+
+            // 0~5.99999999
+            const num=parseInt(Math.random()*6)+1;
+            const img = document.createElement('img');
+            //이미지 경로: http://ggoreb.com/images/choco/1.jpg ~ 6.jpg
+            img.setAttribute('src', `http://ggoreb.com/images/choco/${num}.jpg`);
+            
+            
+            const target = document.querySelector('.target');
+            target.appendChild(img);
+        });
+    </script>
+</body>

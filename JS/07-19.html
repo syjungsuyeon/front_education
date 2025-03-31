@@ -1,0 +1,15 @@
+<body>
+    <script>
+        document.cookie = 'name=hong';
+        console.log(document.cookie);
+        const date = new Date();
+
+        date.setHours(date.getHours() + 1); //한시간 뒤
+        console.log(date);
+        console.log(date.toUTCString());
+
+        document.cookie = 'name=hong2;expires=' + date.toUTCString();  //접속하는 순간 쿠키 삭제됨
+        //쿠키는 이름이 같으면 덮어쓰기 가능
+    </script>
+
+</body>
