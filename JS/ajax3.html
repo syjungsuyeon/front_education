@@ -1,0 +1,39 @@
+<body>
+    <script>
+        const url = 'http://ggoreb.com/api/youtube.jsp';
+
+        //setTimeout(함수, 2000); //동기+논블럭킹
+
+        //블록킹+동기
+        // 논블록킹+비동기
+
+        async function run() {
+            const res = await fetch(url);   //논블럭킹
+            //비동기 (ssd, hdd / network/db접근)
+            const data = await res.json();
+            console.log(data);
+            const items = data.items;  //리스트[]
+            for(const item of items){
+                
+                const id = item.id;
+                
+               let playId='';
+                if(playId in id){
+                    const playId=id.videoId;
+                }else if(playId in id){
+                    const playId=id.channelId;
+                }else{
+                    const playId=id.playlistId;
+                }
+                
+                const snippet = item.snippet;
+                const title = snippet.title;
+                console.log(title,playId);
+            }
+            
+        }
+
+        run();
+
+    </script>
+</body>

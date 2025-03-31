@@ -1,0 +1,22 @@
+<body>
+    <div></div>
+    <script>
+        // map: 모든 요소에 접근하여 제어
+        const arr = [1, 2, 3, 4, 5];
+
+        const arr2 = arr.map((v) => {
+            return `<p>${v}</p>`;
+        });
+        console.log(arr2);
+        arr2.forEach((v) => {
+            document.querySelector('div').innerHTML += v;
+
+        });
+        // const newArr = arr.map(function (value, idx, arr) {
+        //     console.log(value, idx, arr);
+        //     return value;
+        // });
+        // console.log(`old array: ${arr}`);
+        // console.log(`new array: ${newArr}`);
+    </script>
+</body>
