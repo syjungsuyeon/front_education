@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해시태그 검색</title>
+    <style>
+        .suggestions {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-top: 5px;
+            width: 200px;
+            background: white;
+            position: absolute;
+        }
+
+        .suggestions span {
+            display: block;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .suggestions span:hover {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    검색어 입력 : <input type="text" name="search" autocomplete="off">
+    <div class="suggestions"></div>
+
+    <script>
+        const input = document.querySelector('[name=search]');
+        const suggestionsBox = document.querySelector('.suggestions');
+
+        // 해시태그 추천 목록
+        const hashtags = ['#JavaScript', '#HTML', '#CSS', '#프론트엔드', '#웹개발'];
+
+        // 포커스를 받으면 해시태그 추천 보이기
+        input.addEventListener('focus', () => {
+            showSuggestions();
+        });
+
+        // 입력할 때 자동 추천
+        input.addEventListener('input', () => {
+            showSuggestions(input.value);
+        });
+
+        // 추천 해시태그 표시
+        function showSuggestions(query = '') {
+            let filteredTags = hashtags.filter(tag => tag.toLowerCase().includes(query.toLowerCase()));
+
+            if (filteredTags.length === 0) {
+                suggestionsBox.style.display = 'none';
+                return;
+            }
+
+            suggestionsBox.innerHTML = filteredTags.map(tag => `<span>${tag}</span>`).join('');
+            suggestionsBox.style.display = 'block';
+        }
+
+        // 추천 태그 클릭하면 입력창에 추가
+        suggestionsBox.addEventListener('click', (event) => {
+            if (event.target.tagName === 'SPAN') {
+                input.value = event.target.textContent;
+                suggestionsBox.style.display = 'none';
+            }
+        });
+
+        // 입력창을 벗어나면 추천 목록 숨김
+        document.addEventListener('click', (event) => {
+            if (!input.contains(event.target) && !suggestionsBox.contains(event.target)) {
+                suggestionsBox.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
